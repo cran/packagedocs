@@ -1,0 +1,66 @@
+
+{{#.}}
+
+# {{{section_name}}}
+
+{{#entries}}
+
+{{#.}}
+
+
+
+## {{name}}
+
+<a id="{{{alias_name}}}"></a><h3>{{{title}}}</h3>
+
+{{#description}}
+<p class="rd-p">{{{description}}}</p>
+{{/description}}
+
+{{#usage}}
+<h4>Usage</h4>
+<pre class="r"><code>{{{usage}}}</code></pre>
+{{/usage}}
+
+{{#has_args}}
+<h4>Arguments</h4>
+<dl class="rd-dl">
+{{#arguments}}
+  <dt>{{name}}</dt>
+  <dd class="rd-dd">{{{description}}}</dd>
+{{/arguments}}
+</dl>
+{{/has_args}}
+
+{{#sections}}
+  <h4>{{title}}</h4>
+
+  {{#contents}}
+  <p class="rd-p">{{{.}}}</p>
+
+  {{/contents}}
+
+{{/sections}}
+
+{{#examples}}
+
+<h4>Examples</h4>
+```{r {{{ id }}}, {{{ knitr_txt }}} }
+{{{ examples }}}
+```
+{{/examples}}
+
+{{#seealso}}
+<h4>See also</h4>
+{{{ seealso }}}
+{{/seealso}}
+
+{{#author}}
+<h4>Author</h4>
+{{{ author }}}
+{{/author}}
+
+{{/.}}
+{{/entries}}
+
+{{/.}}
